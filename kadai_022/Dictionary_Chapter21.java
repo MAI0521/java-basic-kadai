@@ -2,9 +2,10 @@ package kadai.kadai_022;
 import java.util.HashMap;
 
 public class Dictionary_Chapter21 {
-	public void translate(String word) {
-		HashMap<String,String> translation = new HashMap<String,String>();
-		
+
+    public void translate(String[] words) {
+        HashMap<String, String> translation = new HashMap<>();
+        
         translation.put("apple", "りんご");
         translation.put("peach", "桃");
         translation.put("banana", "バナナ");
@@ -15,11 +16,13 @@ public class Dictionary_Chapter21 {
         translation.put("grape", "ぶどう");
         translation.put("muscat", "マスカット");
         translation.put("cherry", "さくらんぼ");
-    
-        if (translation.containsKey(word)) {
-            System.out.println(word + "の意味は" + translation.get(word));
-        } else {
-            System.out.println(word + "は辞書に存在しません");
+
+        for (String word : words) {
+            if (translation.containsKey(word)) {
+                System.out.println(word + "の意味は" + translation.get(word));
+            } else {
+                System.out.println(word + "は辞書に存在しません");
+            }
         }
     }
 }
